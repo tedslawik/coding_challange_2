@@ -2,7 +2,7 @@
 
 This is in response to an assignment from [Assignment Repo](https://github.com/zadanie-test/coding-challenge/blob/master/UI.md). A test environment has been prepared using the technology stack listed below.
 
-First accidently created with **selenide** - Here is repo with **Selenide** [Repo with Selenide use ](https://github.com/tedslawik/coding_challenge)
+First accidently created with **selenide** - Here is repo with **Selenide** [Repo with Selenide use ](https://github.com/tedslawik/coding_challange)
 
 ## Technology stack
 
