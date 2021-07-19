@@ -1,23 +1,26 @@
 package coding.challenge.allure;
 
-//import io.qameta.allure.Allure;
-//import lombok.extern.slf4j.Slf4j;
-//
-//import java.io.ByteArrayInputStream;
-//import java.io.IOException;
-//
-//import static com.codeborne.selenide.Screenshots.takeScreenShotAsFile;
-//import static org.apache.commons.io.FileUtils.readFileToByteArray;
-//
-//@Slf4j
-//public class AllureReport {
-//
-//    public static void attachScreenshot(String screenshotTitle) {
-//        try {
-//            Allure.addAttachment(screenshotTitle,
-//                    new ByteArrayInputStream(readFileToByteArray(takeScreenShotAsFile())));
-//        } catch (IOException e) {
-//            log.error(e.getMessage());
-//        }
-//    }
-//}
+import coding.challenge.config.GlobalConfig;
+import io.qameta.allure.Allure;
+import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+
+
+
+@Slf4j
+public class AllureReport {
+static WebDriver driver = GlobalConfig.setUp();
+    public static void attachScreenshot(String screenshotTitle) {
+        try {
+            Allure.addAttachment(screenshotTitle,
+                    new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
+    }
+}
